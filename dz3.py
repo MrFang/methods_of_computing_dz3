@@ -36,7 +36,7 @@ for item in sample:
             break
 
 chiSquared = 0
-for i in range(len(P_k)):
-    chiSquared += ((n_k[i] - size * P_k[i])**2) / (size * P_k[i])
+for probability, num  in zip(P_k, n_k):
+    chiSquared += ((num - size * probability)**2) / (size * probability)
 
 print(chiSquared)
