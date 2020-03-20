@@ -15,7 +15,7 @@ size = len(sample)
 
 sampleMean = sum(sample) / size
 
-sampleVariance = reduce(lambda acc, val: acc + val**2, sample) - sampleMean**2
+sampleVariance = reduce(lambda acc, val: acc + val**2, sample)/size - sampleMean**2
 
 eps = 2*sqrt(sampleVariance) / sqrt(size)
 
