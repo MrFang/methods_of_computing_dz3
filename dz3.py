@@ -39,4 +39,13 @@ chiSquared = 0
 for probability, num  in zip(P_k, n_k):
     chiSquared += ((num - size * probability)**2) / (size * probability)
 
-print(chiSquared)
+chiSquaredThreshold = 15.5
+
+print(
+    f'Размер: {size:d}\n'
+    f'Выборочное среднее: {sampleMean:f}\n'
+    f'Выборочная дисперсия: {sampleVariance:f}\n'
+    f'Доверительный интервал: ({-eps:f}; {eps:f})\n'
+    f'Значение Хи-квадрат Пирсона: {chiSquared:f}\n'
+    'Гипотеза принята' if chiSquared < chiSquaredThreshold else 'Гипотеза отклонена'
+)
